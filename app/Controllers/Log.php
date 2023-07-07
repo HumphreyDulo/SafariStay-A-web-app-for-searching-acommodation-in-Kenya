@@ -7,6 +7,7 @@ use App\Controllers\BaseController;
 
 use App\Models\Activation;
 use App\Models\Users;
+use App\Models\VendorModel;
 
 
 class Log extends BaseController
@@ -18,12 +19,11 @@ class Log extends BaseController
         $this->session = \Config\Services::session();
     }
 
+
     public function index()
     {
         $data = [];
-       helper(['form']);
-
-       
+        helper(['form']);
 
         $rules = [
             'username' => ['rules' => 'required|min_length[1]|max_length[255]'],
@@ -43,24 +43,55 @@ class Log extends BaseController
                 if (password_verify($password, $user['password'])) {
                     // Check if the user is active
                     if (isset($user['is_active']) && $user['is_active'] == 1) {
-                        // Password is correct, log in the user
-                        // You can implement your own login logic here
+                        // New conditions
+                        $role = $user['role'];
 
-                        // Set session data
-                        $sessionData = [
-                            'user_id' => $user['id'],
-                            'username' => $user['username'],
-                            'isLoggedIn' => true,
-                            // Add more session data as needed
-                        ];
-                        $this->session->set($sessionData);
+                        if ($role == 1) {
+                            // Fetch vendor status from Vendors table
+                            $vendorModel = new VendorModel();
+                            $vendor = $vendorModel->where('email', $user['email'])->first();
 
-                        // Pass session data to the view
-                        $data['username'] = $user['username'];
+                            if ($vendor) {
+                                if ($vendor['status'] == 'approved') {
+                                    // Set session data
+                                    $sessionData = [
+                                        'user_id' => $user['id'],
+                                        'username' => $user['username'],
+                                        'isLoggedIn' => true,
+                                        // Add more session data as needed
+                                    ];
+                                    $this->session->set($sessionData);
 
-                        echo view('templates/header', $data);
-                        echo view('dashboard');
-                        echo view('templates/footer');
+                                    // Pass session data to the view
+                                    $data['username'] = $user['username'];
+
+                                    return view('vendor_dashboard', $data);
+                                } else {
+                                    // Vendor account is pending
+                                    $data['activation_error'] = 'Your vendor account approval is pending.';
+                                    return view('customerlogin', $data);
+                                }
+                            } else {
+                                // Vendor account not found
+                                $data['activation_error'] = 'Vendor account not found.';
+                                return view('customerlogin', $data);
+                            }
+                        } elseif ($role == 2) {
+                            // Set session data
+                            $sessionData = [
+                                'user_id' => $user['id'],
+                                'username' => $user['username'],
+                                'isLoggedIn' => true,
+                                // Add more session data as needed
+                            ];
+                            $this->session->set($sessionData);
+
+                            // Pass session data to the view
+                            $data['username'] = $user['username'];
+
+                            return view('dashboard', $data);
+                        }
+
                     } else {
                         // User account is not yet activated
                         $data['activation_error'] = 'Your account is not yet activated. Please activate your account first before logging in.';
@@ -85,37 +116,23 @@ class Log extends BaseController
                         $email->send();
 
                         return view('activationform', $data);
-
                     }
-                }
-                else{
+                } else {
                     // Invalid username or password
                     $data['login_error'] = 'Incorrect username or password';
-                        echo view('templates/header', $data);
-                        echo view('customerlogin');
-                        echo view('templates/footer');
-
+                    return view('customerlogin', $data);
                 }
-
-            } 
-            else{
+            } else {
                 $data['validation'] = $this->validator;
-                $data['login_error'] = 'Invalid username, enter the correct username or register';
-                echo view('templates/header', $data);
-                echo view('customerlogin');
-                echo view('templates/footer');
-
+                $data['login_error'] = 'Invalid username';
+                return view('customerlogin', $data);
             }
-        }
-        else{
+        } else {
             $data['validation'] = $this->validator;
             $data['login_error'] = 'Invalid username or password';
-            echo view('templates/header', $data);
-            echo view('customerlogin');
-            echo view('templates/footer');
-
+            return view('customerlogin', $data);
         }
     }
 
-    
+
 }

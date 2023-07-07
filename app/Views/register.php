@@ -142,6 +142,7 @@
       </div>
         </div>
       <button type="submit" class="btn btn-primary">Register</button>
+      <a href="VendorController" class="btn btn-primary">Register as Advertiser </a>
       <p><a href="<?php echo base_url('Log'); ?>">Already have an account? </p>
     </form>
   </div>

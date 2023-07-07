@@ -31,6 +31,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Register::index');
 $routes->get('/login', 'Login::index');
+
 $routes->get('forgot-password', 'PasswordReset::forgotPassword');
 $routes->get('reset_form/(:segment)', 'PasswordReset::reset_form/$1');
 $routes->post('password/reset', 'PasswordReset::resetPassword');
@@ -39,13 +40,14 @@ $routes->get('/check_email', 'PasswordReset::checkEmail');
 
 $routes->get('/vendor_registration', 'VendorController::index');
 $routes->post('/vendor_registration', 'VendorController::register');
+$routes->get('vendor_dashboard', 'VendorController::vendor');
 
 $routes->get('admin_dashboard', 'Dashboard::dashboard');
 
 $routes->get('admin/notifications', 'Admin::notifications');
 $routes->post('admin/handle-registration/(:num)/(:segment)', 'Admin::handleRegistration/$1/$2');
-$routes->get('admin', 'Admin::index');
 
+$routes->get('admin', 'Admin::index');
 $routes->get('admin/accept/(:num)', 'Admin::accept/$1');
 $routes->get('admin/deny/(:num)', 'Admin::deny/$1');
 
