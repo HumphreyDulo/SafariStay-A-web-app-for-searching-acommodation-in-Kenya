@@ -2,54 +2,137 @@
 
 namespace App\Controllers;
 
-use App\Models\AdminModel;
+use App\Models\Activation;
+use App\Models\NotificationModel;
+use App\Models\Users;
+use App\Models\VendorModel;
+use CodeIgniter\Config\Services;
 
-class AdminLoginController extends BaseController
+class VendorController extends BaseController
 {
-    public function index()
-    {
-        $data = [];
-        helper(['form']);
+    protected $session;
 
+    public function __construct()
+    {
+        $this->session = \Config\Services::session();
+    }
+    public function register()
+    {
+        $vendorModel = new VendorModel();
+        $notificationModel = new NotificationModel();
+
+
+        //set validation rules
         $rules = [
-            'admin_name' => 'required',
-            'password' => 'required'
+            'firstname' => ['rules' => 'required|min_length[1]|max_length[255]'],
+            'lastname' => ['rules' => 'required|min_length[1]|max_length[255]'],
+            'username' => ['rules' => 'required|min_length[1]|max_length[255]|is_unique[tbl_users.username]'],
+            'dob' => ['rules' => 'required|min_length[4]|max_length[10]'],
+            'number' => ['rules' => 'required|min_length[9]|max_length[10]'],
+            'email' => ['rules' => 'required|min_length[4]|max_length[255]|valid_email|is_unique[tbl_users.email]'],
+            'password' => [
+                'rules' => 'required|min_length[8]|max_length[255]|regex_match[/^(?=.*[A-Z])(?=.*\d).+$/]',
+                'errors' => [
+                    'regex_match' => 'The password must contain at least one capital letter and one number.',
+                ],
+            ],
+            'confirm_password' => ['label' => 'confirm password', 'rules' => 'matches[password]']
         ];
 
+
         if ($this->validate($rules)) {
-            $adminname = $this->request->getPost('admin_name');
-            $password = $this->request->getPost('password');
+            $model = new Users();
+            $data = [
+                'firstname' => $this->request->getPost('firstname'),
+                'lastname' => $this->request->getPost('lastname'),
+                'dob' => $this->request->getPost('dob'),
+                'number' => $this->request->getPost('number'),
+                'username' => $this->request->getPost('username'),
+                'email' => $this->request->getPost('email'),
+                'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+                'role' => '1'
+            ];
+            $model->save($data);
 
-            // Load the AdminModel
-            $adminModel = new AdminModel();
+            // If validation passed, proceed with saving the vendor registration to the database
+            $data = [
+                'vendor_id' => $this->request->getPost('vendor_id'),
+                'number' => $this->request->getPost('number'),
+                'address' => $this->request->getPost('address'),
+                'email' => $this->request->getPost('email'),
+                'status' => 'pending'
 
-            // Check if the entered username and password match the admin credentials
-            $admin = $adminModel->where('admin_name', $adminname)
-                                ->first();
+            ];
 
-            if ($admin && password_verify($password, $admin['password'])) {
-                // Valid admin credentials
+            // Save the vendor registration to the database
+            $vendorId = $vendorModel->insert($data);
 
-                // Set session data or any other authentication logic here
-                // Set session data
-                $sessionData = [
-                    'admin_id' => $admin['admin_id'], // Assuming 'id' is the column name for the admin ID in the database table
-                    'admin_name' => $admin['admin_name'],
-                    'isLoggedIn' => true,
-                    // Add more session data as needed
-                ];
-                session()->set($sessionData);
+            // Create a notification for the admin
+            $notificationData = [
+                'vendor_id' => $vendorId,
+                'message' => 'New vendor application received',
+                'status' => 'pending'
+            ];
+            $notificationModel->insert($notificationData);
 
-                // Redirect to admin dashboard or any other page
-                return redirect()->to('admin_dashboard');
-            } else {
-                // Invalid admin credentials
-                $data['login_error'] = 'Invalid username or password';
-                return view('adminlogin', $data);
-            }
+
+
+            // Step 3: Generate activation code and send activation email
+
+            $length = 9; // Length of the random string
+
+            $activationCode = bin2hex(random_bytes($length));
+
+            $activationModel = new Activation();
+            $activationData = [
+                'id' => $model->insertID(),
+                'activation_code' => $activationCode,
+            ];
+
+
+            $activationModel->insert($activationData);
+
+            $email = Services::email();
+            $email->setTo($data['email']);
+            $email->setSubject('Account Activation');
+            $email->setMessage("The activation code is: $activationCode");
+            $email->send();
+
+            $username = $this->request->getPost('username');
+            $user = $model->where('username', $username)->first();
+            $sessionData = [
+                'user_id' => $user['id'],
+                'username' => $user['username'],
+                'isLoggedIn' => true,
+                // Add more session data as needed
+            ];
+            $this->session->set($sessionData);
+
+            // Pass session data to the view
+            $data['username'] = $user['username'];
+
+            return redirect()->to('Activate');
         } else {
             $data['validation'] = $this->validator;
-            return view('adminlogin', $data);
+            echo view('templates/header');
+            echo view('register', $data);
+            echo view('templates/footer');
         }
+
+    }
+
+    public function index()
+    {
+
+        return view('vendor_registration');
+
+
+    }
+    public function vendor()
+    {
+
+        return view('vendor_dashboard');
+
+
     }
 }
