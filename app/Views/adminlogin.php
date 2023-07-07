@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <!-- Bootstrap CSS -->
+    <title>Admin Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- AdminLTE CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-
-    <?= $this->extend('admin_layout') ?>
-    <?= $this->section('content') ?>
-
 <?php
       $uri = service('uri');
      ?>
-     
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
       <a class="navbar-brand" href="/">SafariStay</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,32 +44,31 @@
       </div>
       </div>
     </nav>
+    <div class="container">
+        <h2>Admin Login</h2>
 
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="container">
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1>Welcome to your dashboard, <?= session()->get('admin_name') ?>!</h1>
-                            <p>Notifications: <span class="badge badge-primary"><?= $notificationCount ?></span></p>
-                            <a href="<?= base_url('admin') ?>" class="btn btn-primary">View Notifications</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- /.content -->
+        <div class="col-6">
+            <?php if (isset($login_error)) : ?>
+                <div class="alert alert-danger"><?= $login_error ?></div>
+            <?php endif; ?>
         </div>
-        <?= $this->endSection() ?>
 
-   
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <!-- Bootstrap JS -->
+        <form method="post" action="<?php echo base_url('AdminLoginController'); ?>">
+            <div class="form-group col-md-6">
+                <label for="admin_name">Admin Name:</label>
+                <input type="text" name="admin_name" class="form-control" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="password">Password:</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- AdminLTE JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js"></script>
 </body>
 </html>

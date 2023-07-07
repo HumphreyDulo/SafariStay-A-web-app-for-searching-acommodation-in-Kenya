@@ -9,5 +9,7 @@ class Acterror extends BaseController
     public function index()
     {
         return view('activation_error');
+
+        
     }
 }

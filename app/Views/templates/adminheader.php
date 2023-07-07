@@ -21,10 +21,10 @@
       <?php if (session()->get('isLoggedIn')): ?>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item <?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null) ?>">
-            <a class="nav-link"  href="/dashboard">Dashboard</a>
+            <a class="nav-link"  href="/admin_dashboard">Dashboard</a>
           </li>
           <li class="nav-item <?= ($uri->getSegment(1) == 'profile' ? 'active' : null) ?>">
-            <a class="nav-link" href="/profile">Profile</a>
+            <a class="nav-link" href="/admin_profile">Profile</a>
           </li>
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
@@ -33,15 +33,9 @@
           </li>
         </ul>
       <?php else: ?>
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item <?= ($uri->getSegment(1) == 'login' ? 'active' : null) ?>">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item <?= ($uri->getSegment(1) == '' ? 'active' : null) ?>">
-            <a class="nav-link" href="/">Register</a>
-          </li>
+        <ul class="navbar-nav mr-auto">  
           <li class="nav-item <?= ($uri->getSegment(1) == 'admin' ? 'active' : null) ?>">
-            <a class="nav-link" href="/admin-login">Admin</a>
+            <a class="nav-link" href="/admin-login">Admin Login</a>
           </li>
         </ul>
         <?php endif; ?>
