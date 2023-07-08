@@ -81,6 +81,8 @@ $routes->get('admin', 'Admin::index');
 $routes->get('admin/accept/(:num)', 'Admin::accept/$1');
 $routes->get('admin/deny/(:num)', 'Admin::deny/$1');
 
+$routes->post('post', 'Post::add_product');
+
 
 
 
