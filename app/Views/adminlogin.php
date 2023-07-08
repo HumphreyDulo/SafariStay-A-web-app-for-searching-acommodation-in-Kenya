@@ -45,7 +45,7 @@
       </div>
     </nav>
     <div class="container">
-        <h2>Login</h2>
+        <h2>Admin Login</h2>
 
         <div class="col-6">
             <?php if (isset($login_error)) : ?>

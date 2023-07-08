@@ -15,7 +15,6 @@
 
         div.button {
             margin-top: 20px;
-
         }
 
         div.buttons {
@@ -27,13 +26,30 @@
 
 <body>
     <div class="container">
-        <h2>  Login</h2>
+        <h2>Login</h2>
 
-        <div class="col-6">
-            <?php if (isset($login_error)) : ?>
-            <div class="alert alert-danger"><?= $login_error ?></div>
-            <?php endif; ?>
+        <div>
+    <?php if (isset($login_error)): ?>
+        <div class="alert alert-danger">
+            <?= $login_error ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (isset($validation)): ?>
+        <?php foreach ($validation->getErrors() as $error): ?>
+            <div class="alert alert-danger">
+                <?= $error ?>
             </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
+    <?php if (isset($activation_error)): ?>
+        <div class="alert alert-danger">
+            <?= $activation_error ?>
+        </div>
+    <?php endif; ?>
+</div>
+
 
         <form method="post" action="<?php echo base_url('Log'); ?>">
             <div class="form-group col-md-6">
@@ -45,22 +61,16 @@
                 <input type="password" name="password" class="form-control" value="" required />
             </div>
 
-            
-
             <div class="button">
                 <button type="submit" class="btn btn-primary">Login</button>
             </div>
 
             <div class="button">
-            <p><a href="<?php echo base_url('/'); ?>" Dont have an account?></p>
+                <p><a href="<?php echo base_url('/'); ?>">Don't have an account?</a></p>
             </div>
 
             <div class="buttons">
                 <a href="/forgot-password" class="btn btn-primary">Forgot Password?</a>
-            </div>
-
-            <div class="buttons">
-                <a href="" class="btn btn-primary">Login as Advertiser </a>
             </div>
         </form>
     </div>

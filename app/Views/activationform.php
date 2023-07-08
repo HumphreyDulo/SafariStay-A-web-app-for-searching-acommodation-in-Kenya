@@ -14,7 +14,7 @@
     <form action="<?php echo base_url('Activate'); ?>" method="post">
         <div class="form-group">
             <label for="activation_code">Activation Code</label>
-            <input type="text" id="activation_code" name="activation_code" class="form-control" required>
+            <input type="password" id="activation_code" name="activation_code" class="form-control" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Activate Account</button>

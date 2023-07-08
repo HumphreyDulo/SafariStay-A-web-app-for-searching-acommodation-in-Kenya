@@ -7,6 +7,10 @@
 </head>
 
 <body>
+
+<?= $this->extend('admin_layout') ?>
+<?= $this->section('content') ?>
+
 <?php
       $uri = service('uri');
      ?>
@@ -98,6 +102,8 @@
 
         <a href="<?php echo base_url('admin_dashboard'); ?>" class="btn btn-primary">Back to Admin Dashboard</a>
     </div>
+    <?= $this->endSection() ?>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
