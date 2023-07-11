@@ -43,6 +43,10 @@
           <li class="nav-item <?= ($uri->getSegment(1) == 'admin' ? 'active' : null) ?>">
             <a class="nav-link" href="/admin-login">Admin</a>
           </li>
+          <li class="nav-item <?= ($uri->getSegment(1) == 'vendor' ? 'active' : null) ?>">
+          <a class="nav-link" href="<?= base_url('VendorController') ?>">Vendor</a>
+          </li>
+
         </ul>
         <?php endif; ?>
       </div>

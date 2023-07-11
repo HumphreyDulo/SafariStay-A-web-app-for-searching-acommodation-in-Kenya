@@ -34,13 +34,24 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="<?= base_url('admin/viewusers'); ?>" class="nav-link">
                                 <p>
                                     Users
                                     <span class="right badge badge-primary"></span>
                                 </p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/viewProducts'); ?>" class="nav-link">
+                                <p>
+                                    Products
+                                    <span class="right badge badge-primary"></span>
+                                </p>
+                            </a>
+                        </li>
+
+
 
                         <li class="nav-item">
                             <a href="<?= base_url('admin') ?>" class="nav-link">

@@ -38,4 +38,9 @@ class Users extends Model
     protected $afterFind = [];
     protected $beforeDelete = [];
     protected $afterDelete = [];
+
+    public function deleteUser($userId)
+    {
+        return $this->where('id', $userId)->delete();
+    }
 }
