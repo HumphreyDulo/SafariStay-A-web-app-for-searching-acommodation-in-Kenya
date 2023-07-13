@@ -40,7 +40,7 @@ Before getting started, ensure that you have the following software installed on
 - XAMPP (for Apache, PHP, and MySQL)
 - Git
 - Composer
-- Stripe
+- Stripe for payment integration
 
 ### 2.2 Setting up the Environment
 1. Install XAMPP by following the instructions on the official XAMPP website: [https://www.apachefriends.org/index.html](https://www.apachefriends.org/index.html)
@@ -98,6 +98,63 @@ By default, the server will run on 'http://localhost:8080'. If you want to run i
 5. Open your web browser and go to http://localhost:8080 (or the specified port)
 
 Please note that in the installation section, you need to replace `[repository_url]`, `'your_username'`, `'your_password'`, and `[path_to_repository]` with the actual values specific to your project and environment.
+
+### 2.6 Installing stripe
+Apologies for the confusion. The previous instructions were not in markdown format. Here are the steps to install Stripe in your project, including the necessary modifications to `php.ini`, in markdown language:
+
+1. Create a Stripe Account: If you haven't already, sign up for a Stripe account at [stripe.com](https://stripe.com). Once you're signed up, you'll have access to your API keys, which you'll need to integrate Stripe into your project.
+
+2. Download Composer: Composer is a dependency management tool for PHP. If you don't have Composer installed, download and install it by following the instructions at [getcomposer.org](https://getcomposer.org/download/).
+
+3. Create a New Project: Assuming you already have a PHP project set up, open a terminal or command prompt and navigate to your project's directory.
+
+4. Require Stripe Library: In your project's root directory, run the following command to require the Stripe PHP library:
+
+   ```bash
+   composer require stripe/stripe-php
+   ```
+
+   This command downloads the Stripe PHP library and adds it as a dependency to your project.
+
+5. Configure PHP.ini: Open your `php.ini` file and ensure the following extensions are enabled:
+
+   ```ini
+   extension=curl
+   extension=gd2
+   ```
+
+   Save the changes and restart your web server to apply the configuration.
+
+6. Include Stripe Library: In your PHP file where you want to use Stripe, include the Stripe PHP library by adding the following line at the top:
+
+   ```php
+   require_once 'vendor/autoload.php';
+   ```
+
+7. Set Your Stripe API Keys: In the same PHP file, replace `'your_publishable_key'` and `'your_secret_key'` with your actual Stripe API keys:
+
+   ```php
+   \Stripe\Stripe::setApiKey('your_secret_key');
+   ```
+
+   You can find your API keys in your Stripe account dashboard.
+
+8. Start Using Stripe: With the Stripe PHP library installed and API keys configured, you can now start using Stripe's features in your PHP code. For example, to create a payment charge, you can use the following code:
+
+   ```php
+   $charge = \Stripe\Charge::create([
+       'amount' => 2000, 
+       'currency' => 'usd',
+       'source' => 'tok_visa', // Replace with actual card token. tok_visa is a token for visa cards
+       'description' => 'Example charge',
+   ]);
+   ```
+
+   Customize the code according to your specific payment scenarios and requirements.
+
+After that, you will have successfully installed Stripe in your PHP project. 
+
+Remember to consult the official Stripe documentation for more detailed information and examples on how to use Stripe's features effectively.
 
 
 ## 3. Features
