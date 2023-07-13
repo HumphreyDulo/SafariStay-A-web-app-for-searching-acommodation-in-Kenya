@@ -111,8 +111,14 @@ Below is the overview of how the application is used for two categories of users
 
 In the context of this web application, a customer is any user who wishes to search for tourist facilities in Kenya.
 To do this, they can follow the simple steps below:
-1. Register as a customer and log in.
-2. Once logged in, they will have the ability to access the web application
+1. When a cutomer loads our application, they are welcomed by our landing page, which will prompt the to 'Explore' the application 
+2. Afterwards you can Register as a customer and log in.
+3. Once logged in, they will have the ability to access the web application fully as a user
+4. They will be able to view all the places offered in the application
+5. Using the filters tab on the extreme left hand side, a customer can put in specifications on the place they would like to visit, such as        preferred location, number of bedrooms, bathrooms and even the price
+6. Once the desired place is found, the customer can then proceed to booking by selecting their check-in and check-out dates
+7. Confirmation of booking is done by selecting the 'Book Now' button on the right panel.
+
 ....
 
 ### Vendors
@@ -122,7 +128,7 @@ If you wish to advertise and avail your facility using our application, follow t
 1. Register(if not already) and log in as a vendor.
 2. Once logged in, as a vendor you will have a dashboard that will show all the facilities you have posted and you will have the option to ad another(Add Product)
 3. After clicking the 'Add Product' button, you will be redirected to a page where you can specify the product you would like to add
-....
+   ....
 
 ## 5. Contributing
 

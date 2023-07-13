@@ -1,0 +1,242 @@
+INFO - 2023-07-13 05:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:12:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:14:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:15:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:15:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:15:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:16:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:17:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:17:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:28:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:29:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:34:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 05:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-13 05:42:20 --> mysqli_sql_exception: Can't create table `home`.`tbl_bookings` (errno: 150 "Foreign key constraint is incorrectly formed") in C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\MySQLi\Connection.php(295): mysqli->query('CREATE TABLE `t...', 0)
+#1 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `t...')
+#2 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `t...')
+#3 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `t...')
+#4 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\app\Database\Migrations\2023-07-13-054043_TblBookings.php(42): CodeIgniter\Database\Forge->createTable('tbl_bookings')
+#5 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\MigrationRunner.php(877): App\Database\Migrations\TblBooking->up()
+#6 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\spark(97): CodeIgniter\CLI\Console->run()
+#11 {main}
+INFO - 2023-07-13 06:28:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 06:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-13 06:28:29 --> mysqli_sql_exception: Column 'checkin_date' cannot be null in C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\app\Controllers\BookingController.php(35): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php(934): App\Controllers\BookingController->index()
+#9 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+#10 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-13 06:28:29 --> Column 'checkin_date' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `tbl_bookings` (`user_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (\'10\', NULL, NULL, NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_bookings` (`user_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (\'10\', NULL, NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_bookings` (`user_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (\'10\', NULL, NULL, NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_bookings` (`user_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (:user_id:, :checkin_date:, :checkout_date:, :total_price:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\BookingController.php(35): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 06:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 06:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-13 06:41:02 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`home`.`tbl_bookings`, CONSTRAINT `tbl_bookings_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `tbl_products` (`id`)) in C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\app\Controllers\BookingController.php(35): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php(934): App\Controllers\BookingController->index()
+#9 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+#10 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-13 06:41:02 --> Cannot add or update a child row: a foreign key constraint fails (`home`.`tbl_bookings`, CONSTRAINT `tbl_bookings_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `tbl_products` (`id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `tbl_bookings` (`user_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (\'10\', \'2023-07-13\', \'2023-07-14\', \'56666\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_bookings` (`user_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (\'10\', \'2023-07-13\', \'2023-07-14\', \'56666\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_bookings` (`user_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (\'10\', \'2023-07-13\', \'2023-07-14\', \'56666\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_bookings` (`user_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (:user_id:, :checkin_date:, :checkout_date:, :total_price:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\BookingController.php(35): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 09:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 09:54:48 --> Undefined variable $product
+in APPPATH\Controllers\BookingController.php on line 24.
+ 1 APPPATH\Controllers\BookingController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product', 'C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Controllers\\BookingController.php', 24)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 09:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:57:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 09:57:32 --> Undefined array key "id"
+in APPPATH\Controllers\BookingController.php on line 26.
+ 1 APPPATH\Controllers\BookingController.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Controllers\\BookingController.php', 26)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 09:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 09:58:49 --> Undefined variable $model
+in APPPATH\Controllers\BookingController.php on line 25.
+ 1 APPPATH\Controllers\BookingController.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $model', 'C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Controllers\\BookingController.php', 25)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 09:59:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 09:59:07 --> Undefined variable $id
+in APPPATH\Controllers\BookingController.php on line 25.
+ 1 APPPATH\Controllers\BookingController.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Controllers\\BookingController.php', 25)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 09:59:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 09:59:31 --> Undefined variable $product
+in APPPATH\Controllers\BookingController.php on line 24.
+ 1 APPPATH\Controllers\BookingController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product', 'C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Controllers\\BookingController.php', 24)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 10:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 10:00:51 --> Undefined variable $product
+in APPPATH\Controllers\BookingController.php on line 24.
+ 1 APPPATH\Controllers\BookingController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product', 'C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Controllers\\BookingController.php', 24)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 10:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 10:01:22 --> Undefined variable $product
+in APPPATH\Controllers\BookingController.php on line 24.
+ 1 APPPATH\Controllers\BookingController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product', 'C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Controllers\\BookingController.php', 24)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-13 10:02:50 --> Too few arguments to function App\Controllers\BookingController::index(), 0 passed in C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\BookingController.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-13 10:04:05 --> Too few arguments to function App\Controllers\BookingController::index(), 0 passed in C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\BookingController.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 10:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 10:04:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 10:04:21 --> Too few arguments to function App\Controllers\BookingController::index(), 0 passed in C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\BookingController.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-13 10:06:33 --> Too few arguments to function App\Controllers\BookingController::index(), 0 passed in C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\BookingController.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-13 10:06:37 --> Too few arguments to function App\Controllers\BookingController::index(), 0 passed in C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\BookingController.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-13 10:14:39 --> Too few arguments to function App\Controllers\BookingController::index(), 0 passed in C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\BookingController.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-13 10:19:22 --> Too few arguments to function App\Controllers\BookingController::index(), 0 passed in C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\BookingController.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 10:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-13 10:19:48 --> mysqli_sql_exception: Column 'product_id' cannot be null in C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\app\Controllers\BookingController.php(37): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php(934): App\Controllers\BookingController->index()
+#9 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+#10 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-13 10:19:48 --> Column 'product_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `tbl_bookings` (`user_id`, `product_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (\'10\', NULL, \'2023-07-13\', \'2023-07-14\', \'56666\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_bookings` (`user_id`, `product_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (\'10\', NULL, \'2023-07-13\', \'2023-07-14\', \'56666\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_bookings` (`user_id`, `product_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (\'10\', NULL, \'2023-07-13\', \'2023-07-14\', \'56666\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_bookings` (`user_id`, `product_id`, `checkin_date`, `checkout_date`, `total_price`) VALUES (:user_id:, :product_id:, :checkin_date:, :checkout_date:, :total_price:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\BookingController.php(37): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BookingController->index()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BookingController))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 10:51:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 10:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 11:00:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 11:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 11:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 11:31:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 11:31:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 11:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 12:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 12:23:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 12:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

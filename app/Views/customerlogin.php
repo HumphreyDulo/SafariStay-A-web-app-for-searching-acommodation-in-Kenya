@@ -66,7 +66,7 @@
             </div>
 
             <div class="button">
-                <p><a href="<?php echo base_url('/'); ?>">Don't have an account?</a></p>
+                <p><a href="<?php echo base_url('/register'); ?>">Don't have an account?</a></p>
             </div>
 
             <div class="buttons">

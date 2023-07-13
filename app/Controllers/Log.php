@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\Auth;
 use App\Controllers\BaseController;
-
+use App\Models\Products;
 use App\Models\Activation;
 use App\Models\Users;
 use App\Models\VendorModel;
@@ -88,6 +88,9 @@ class Log extends BaseController
 
                             // Pass session data to the view
                             $data['username'] = $user['username'];
+
+                            $productModel = new Products();
+                             $data['products'] = $productModel->findAll();
 
                             return view('dashboard', $data);
                         }

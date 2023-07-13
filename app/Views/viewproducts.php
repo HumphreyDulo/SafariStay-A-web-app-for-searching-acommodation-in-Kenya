@@ -20,7 +20,7 @@
             <div class="card mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                    <img src="<?= base_url('uploads/' . $product['product_images'][0]); ?>" class="card-img" alt="Product Image">
+                    <img src="<?= base_url('/' . $product['product_images']); ?>" class="card-img" alt="Product Image">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
