@@ -3,7 +3,10 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+
 use App\Models\BookingModel;
+
+
 use App\Models\PaymentModel;
 
 //defined('BASEPATH') or exit('No direct script access allowed');
@@ -22,7 +25,11 @@ class PaymentController extends BaseController
 
     }
 
+
     /*public function X()
+
+    public function process()
+
     {
         $paymentModel = new PaymentModel();
         $session = session();
@@ -89,6 +96,7 @@ class PaymentController extends BaseController
             return redirect()->to('error_page');
         }
     }
+
 */
 
     public function process()
@@ -165,6 +173,7 @@ class PaymentController extends BaseController
         } 
         
     }
+
 
 
     public function success()

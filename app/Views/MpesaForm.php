@@ -17,7 +17,10 @@
         </div>
         <button type="submit" class="btn btn-primary">Pay</button>
 
+
         <a href="PayChoice" class="btn btn-primary">Back </a>
+
+
     </form>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
