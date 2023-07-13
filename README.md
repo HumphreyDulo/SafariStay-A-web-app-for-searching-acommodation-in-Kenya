@@ -152,9 +152,7 @@ Apologies for the confusion. The previous instructions were not in markdown form
 
    Customize the code according to your specific payment scenarios and requirements.
 
-After that, you will have successfully installed Stripe in your PHP project. 
-
-Remember to consult the official Stripe documentation for more detailed information and examples on how to use Stripe's features effectively.
+After that, you will have successfully installed Stripe in your PHP project. Remember to consult the official Stripe documentation for more detailed information and examples on how to use Stripe's features effectively.
 
 
 ## 3. Features
