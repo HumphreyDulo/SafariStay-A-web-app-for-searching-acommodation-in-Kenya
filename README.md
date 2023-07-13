@@ -99,7 +99,10 @@ By default, the server will run on 'http://localhost:8080'. If you want to run i
 
 Please note that in the installation section, you need to replace `[repository_url]`, `'your_username'`, `'your_password'`, and `[path_to_repository]` with the actual values specific to your project and environment.
 
+
 ### 2.7 Installing stripe
+
+
 Apologies for the confusion. The previous instructions were not in markdown format. Here are the steps to install Stripe in your project, including the necessary modifications to `php.ini`, in markdown language:
 
 1. Create a Stripe Account: If you haven't already, sign up for a Stripe account at [stripe.com](https://stripe.com). Once you're signed up, you'll have access to your API keys, which you'll need to integrate Stripe into your project.
