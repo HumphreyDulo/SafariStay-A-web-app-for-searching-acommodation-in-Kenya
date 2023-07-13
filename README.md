@@ -39,6 +39,8 @@ The lack of a centralized platform with comprehensive and trustworthy informatio
 Before getting started, ensure that you have the following software installed on your machine:
 - XAMPP (for Apache, PHP, and MySQL)
 - Git
+- Composer
+- Stripe
 
 ### 2.2 Setting up the Environment
 1. Install XAMPP by following the instructions on the official XAMPP website: [https://www.apachefriends.org/index.html](https://www.apachefriends.org/index.html)
@@ -62,6 +64,10 @@ Before getting started, ensure that you have the following software installed on
 4. Run the following command to run the migrations and create the necessary tables:
    ```terminal
    php spark migrate
+   4. Run the following command to run the migrations and create the necessary tables:
+   ```terminal
+   php spark migrate
+   
 
 
 ### 2.5 Configuring CodeIgniter
