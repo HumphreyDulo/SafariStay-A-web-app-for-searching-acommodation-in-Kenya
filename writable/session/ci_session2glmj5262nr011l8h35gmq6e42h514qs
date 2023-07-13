@@ -1,0 +1,3 @@
+__ci_last_regenerate|i:1689185055;_ci_previous_url|s:44:"http://localhost:8080/index.php/paymentError";error_message|s:269:"Payment error: Client error: `POST https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl` resulted in a `404 Not Found` response:
+{"fault":{"faultstring":"Unable to identify proxy for host: secure and url: \/mpesa\/c2b\/v1\/registerurl","detail":{"er (truncated...)
+";__ci_vars|a:1:{s:13:"error_message";s:3:"old";}

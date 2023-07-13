@@ -91,6 +91,16 @@ $routes->post('post', 'Post::add_product');
 $routes->get('/admin/products', 'Admin::viewProducts');
 $routes->get('admin/delete_product/(:num)', 'Admin::deleteProduct/$1');
 
+$routes->post('paymentform', 'PaymentController::process');
+$routes->get('paymentform', 'PaymentController::index');
+$routes->get('paymentSuccess', 'PaymentController::success');
+$routes->get('paymentError', 'PaymentController::error');
+
+$routes->get('MpesaForm', 'PaymentController::MPESA');
+$routes->post('MpesaForm', 'PaymentController::Mprocess');
+
+$routes->get('MPerror', 'PaymentController::MPerror');
+$routes->get('MPsuccess', 'PaymentController::MPsuccess');
 
 
 

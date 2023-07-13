@@ -1,0 +1,6 @@
+__ci_last_regenerate|i:1689183467;_ci_previous_url|s:44:"http://localhost:8080/index.php/paymentError";error_message|s:275:"Payment error: Client error: `POST https://sandbox.safaricom.co.ke/mpesa/b2c/v1/paymentrequest` resulted in a `401 UnAuthorized` response:
+{
+                    "requestId":"29586-26697789-1",
+                    "errorCode": "401.002.01",
+                    (truncated...)
+";__ci_vars|a:1:{s:13:"error_message";s:3:"old";}

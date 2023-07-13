@@ -1,0 +1,6 @@
+__ci_last_regenerate|i:1689182947;_ci_previous_url|s:44:"http://localhost:8080/index.php/paymentError";error_message|s:285:"Payment error: Client error: `POST https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest` resulted in a `404 Resource not found` response:
+{
+                    "requestId":"12125-246152032-1",
+                    "errorCode": "404.001.03",
+                   (truncated...)
+";__ci_vars|a:1:{s:13:"error_message";s:3:"old";}
