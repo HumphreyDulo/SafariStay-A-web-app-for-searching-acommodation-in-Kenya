@@ -68,9 +68,9 @@ echo "You can now access Safari Stay by visiting http://localhost:8080 in your w
 ```
 
 
-### Setting up the Environment
-1. Install XAMPP by following the instructions on the official XAMPP website: [https://www.apachefriends.org/index.html](https://www.apachefriends.org/index.html)
-2. Start the Apache and MySQL services in XAMPP control panel.
+### Setting up the Database Environment
+
+1. Start the Apache and MySQL services in XAMPP control panel.
 
 ### Clone the Repository
 1. Open your terminal or command prompt.
@@ -79,7 +79,7 @@ echo "You can now access Safari Stay by visiting http://localhost:8080 in your w
    ```terminal
    git clone [(https://github.com/HumphreyDulo/SafariStay-A-web-app-for-searching-acommodation-in-Kenya.git)]
    ```
-   Replace `[repository_url]` with the URL of the repository.
+ 
 
 ### 2.4 Database Setup
 1. Access the MySQL database through phpMyAdmin:
