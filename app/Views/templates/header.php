@@ -34,6 +34,11 @@
                 <i class="fas fa-user"></i> Profile
               </a>
             </li>
+            <li class="nav-item <?= ($uri->getSegment(1) == 'history' ? 'active' : null) ?>">
+              <a class="nav-link" href="/booking-history">
+                <i class="fas fa-store"></i> History
+              </a>
+            </li>
           </ul>
           <ul class="navbar-nav my-2 my-lg-0">
             <li class="nav-item">
@@ -64,6 +69,7 @@
                 <i class="fas fa-store"></i> Vendor
               </a>
             </li>
+            
           </ul>
 
         <?php endif; ?>

@@ -51,7 +51,14 @@
                             </a>
                         </li>
 
-
+                        <li class="nav-item">
+                            <a href="<?= base_url('BookingController/all'); ?>" class="nav-link">
+                                <p>
+                                    Bookings
+                                    <span class="right badge badge-primary"></span>
+                                </p>
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <a href="<?= base_url('admin') ?>" class="nav-link">
@@ -62,6 +69,8 @@
                                 </p>
                             </a>
                         </li>
+
+                        
                         <li class="nav-item">
                             <a href="/logout" class="nav-link">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>

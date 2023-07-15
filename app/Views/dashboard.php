@@ -37,6 +37,9 @@
                         <li class="nav-item <?= ($uri->getSegment(1) == 'profile' ? 'active' : null) ?>">
                             <a class="nav-link" href="/profile">Profile</a>
                         </li>
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'history' ? 'active' : null) ?>">
+                        <a class="nav-link" href="/booking-history">History</a>
+                        </li>
                     </ul>
                     <ul class="navbar-nav my-2 my-lg-0">
                         <li class="nav-item">

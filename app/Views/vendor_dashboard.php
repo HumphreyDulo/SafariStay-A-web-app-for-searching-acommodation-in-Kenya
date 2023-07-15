@@ -43,6 +43,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="EditController">Edit Profile</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="VendorController/history">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="VendorController/bookinghistory">Bookings</a>
+                        </li>
                     </ul>
                     <ul class="navbar-nav my-2 my-lg-0">
                         <li class="nav-item">

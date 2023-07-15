@@ -115,7 +115,7 @@ Start the Apache and MySQL services in XAMPP control panel.
 - Communication features for customers to contact property owners and advertisers
 
 
-## 7. Contact
+## Contact
 
 For any questions, feedback, or improvement suggestions, feel free to contact us via email:
 - kihanya.mungai@strathmore.edu

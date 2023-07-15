@@ -25,6 +25,10 @@ class TblBooking extends Migration
                 'constraint' => 5,
                 'unsigned' => true,
             ],
+            'vendor_id' => [
+                'type' => 'BIGINT',
+                'constraint' => 255,
+            ],
             'checkin_date' => [
                 'type' => 'DATE',
             ],

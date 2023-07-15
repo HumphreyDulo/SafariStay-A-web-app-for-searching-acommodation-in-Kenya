@@ -16,6 +16,7 @@ class BookingModel extends Model
     protected $allowedFields = [
                                     'user_id',
                                     'product_id',
+                                    'vendor_id',
                                     'checkin_date',
                                     'checkout_date',
                                     'total_price',

@@ -15,6 +15,10 @@ class Post extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'vendorid' => [
+                'type' => 'BIGINT',
+                'constraint' => 255,
+            ],
             'product_name' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,

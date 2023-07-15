@@ -4,7 +4,9 @@ namespace App\Controllers;
 
 use App\Models\Activation;
 use App\Models\NotificationModel;
+use App\Models\BookingModel;
 use App\Models\Users;
+use App\Models\Products;
 use App\Models\VendorModel;
 use CodeIgniter\Config\Services;
 
@@ -135,4 +137,58 @@ class VendorController extends BaseController
 
 
     }
+
+
+    public function history()
+        {
+            // Get the user ID from the session or authentication library
+            $session = session();
+            $userId = $session->get('user_id'); // Adjust this according to your session setup
+    
+            // Create a new instance of the BookingModel
+            $productModel = new Products();
+    
+            // Retrieve the user's booking history from the database
+            $products = $productModel->where('vendorid', $userId)->findAll();
+    
+            // Pass the bookings data to the view
+            $data['products'] = $products;
+    
+            // Load the view to display the user's booking history
+            return view('vendorproducts', $data);
+        }
+        public function bookinghistory()
+        {
+            // Get the user ID from the session or authentication library
+            $session = session();
+            $userId = $session->get('user_id'); // Adjust this according to your session setup
+    
+            // Create a new instance of the BookingModel
+            $bookingModel = new BookingModel();
+    
+            // Retrieve the user's booking history from the database
+            $bookings = $bookingModel->where('vendor_id', $userId)->findAll();
+    
+            // Pass the bookings data to the view
+            $data['bookings'] = $bookings;
+    
+            // Load the view to display the user's booking history
+            return view('vendorbookings', $data);
+        }
+        
+        public function deleteProduct($productId)
+        {
+            $model = new Products();
+        
+            // Perform the deletion based on the product ID
+            $model->delete($productId);
+        
+            return redirect()->back()->with('success', 'Product deleted successfully.');
+        }
+
+        public function logout(){
+            $this->session->destroy(); // Destroy all session data
+            return redirect()->to('login');
+        }
 }
+

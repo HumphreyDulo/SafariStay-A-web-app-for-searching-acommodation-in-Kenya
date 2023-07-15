@@ -14,6 +14,9 @@ class Post extends BaseController
 
     public function add_product()
     {
+        $session = session();
+        $userId = $session->get('user_id'); // Adjust this according to your session setup
+    
         $model = new Products();
     
         // Retrieve form data
@@ -49,6 +52,7 @@ class Post extends BaseController
     
         // Store the product data in the database
         $productData = [
+            'vendorID' => $userId,
             'product_name' => $productName,
             'product_description' => $productDescription,
             'product_images' => implode(',', $imagePaths),
