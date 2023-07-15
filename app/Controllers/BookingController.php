@@ -15,7 +15,12 @@ class BookingController extends Controller
     public function index($productID)
     {
         
-        
+        // Check if the user is logged in
+    if (!session('user_id')) {
+        // Redirect non-registered users to the registration page with a message
+        return redirect()->to('login')->with('error', 'Please login first.');
+    }
+
         // Get the user ID from the session or authentication library
         $session = session();
         $userId = $session->get('user_id'); // Adjust this according to your session setup

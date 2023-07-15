@@ -15,59 +15,67 @@
     }
 
     .password-tooltip {
-            position: relative;
-            display: block;
-            cursor: pointer;
-        }
+      position: relative;
+      display: block;
+      cursor: pointer;
+    }
 
-        .password-tooltip .tooltip-content {
-            visibility: hidden;
-            width: 300px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -100px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .password-tooltip:hover .tooltip-content {
-            visibility: visible;
-            opacity: 1;
-        }
+    .password-tooltip .tooltip-content {
+      visibility: hidden;
+      width: 300px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .password-tooltip:hover .tooltip-content {
+      visibility: visible;
+      opacity: 1;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
+
     <h2>User Registration</h2>
-    <form method="post" style="max-width: 600px;" action="<?php echo base_url('Auth'); ?>">
-  <div class="row col-12">
-      <div class="form-group col-md-6">
-        <label for="firstname">First Name:</label>
-        <input type="text" name="firstname" class="form-control" required />
-        <?php if (isset($validation)): ?>
-          <small class="text-danger">
-            <?= $validation->getError('firstname') ?>
-          </small>
-        <?php endif; ?>
+    <?php if (session()->has('error')): ?>
+      <div class="alert alert-danger">
+        <?= session('error') ?>
       </div>
 
-      <div class="form-group col-md-6">
-        <label for="lastname">Last Name:</label>
-        <input type="text" name="lastname" class="form-control" required />
-        <?php if (isset($validation)): ?>
-          <small class="text-danger">
-            <?= $validation->getError('lastname') ?>
-          </small>
-        <?php endif; ?>
-      </div>
+    <?php endif; ?>
+    <form method="post" style="max-width: 600px;" action="<?php echo base_url('Auth'); ?>">
+      <div class="row col-12">
+        <div class="form-group col-md-6">
+          <label for="firstname">First Name:</label>
+          <input type="text" name="firstname" class="form-control" required />
+          <?php if (isset($validation)): ?>
+            <small class="text-danger">
+              <?= $validation->getError('firstname') ?>
+            </small>
+          <?php endif; ?>
         </div>
+
+        <div class="form-group col-md-6">
+          <label for="lastname">Last Name:</label>
+          <input type="text" name="lastname" class="form-control" required />
+          <?php if (isset($validation)): ?>
+            <small class="text-danger">
+              <?= $validation->getError('lastname') ?>
+            </small>
+          <?php endif; ?>
+        </div>
+      </div>
 
       <div class="form-group col-6">
         <label for="username">Username:</label>
@@ -79,7 +87,7 @@
         <?php endif; ?>
       </div>
 
-      
+
       <div class="form-group col-md-6">
         <label for="dob">Date of Birth:</label>
         <input type="text" name="dob" class="form-control" required />
@@ -99,7 +107,7 @@
           </small>
         <?php endif; ?>
       </div>
-        
+
 
       <div class="form-group col-md-6">
         <label for="email">Email:</label>
@@ -112,35 +120,35 @@
       </div>
 
       <div class="row col-12">
-      <div class="form-group col-md-6 ">
-        <label for="password">Password:</label>
-              <div class="password-tooltip">
-                  <input type="password" name="password" class="form-control" value="" required />
-                  <span class="tooltip-content">
-                      Password requirements:<br>
-                      - Minimum 8 characters<br>
-                      - At least 1 uppercase character<br>
-                      - At least 1 lowercase character<br>
-                      - At least 1 number<br>
-                  </span>
-              </div>
-        <?php if (isset($validation)): ?>
-          <small class="text-danger">
-            <?= $validation->getError('password') ?>
-          </small>
-        <?php endif; ?>
-        
-      </div>
-      <div class="form-group col-md-6">
-        <label for="confirm_password">Confirm Password:</label>
-        <input type="password" name="confirm_password" class="form-control" value="" required />
-        <?php if (isset($validation)): ?>
-          <small class="text-danger">
-            <?= $validation->getError('confirm_password') ?>
-          </small>
-        <?php endif; ?>
-      </div>
+        <div class="form-group col-md-6 ">
+          <label for="password">Password:</label>
+          <div class="password-tooltip">
+            <input type="password" name="password" class="form-control" value="" required />
+            <span class="tooltip-content">
+              Password requirements:<br>
+              - Minimum 8 characters<br>
+              - At least 1 uppercase character<br>
+              - At least 1 lowercase character<br>
+              - At least 1 number<br>
+            </span>
+          </div>
+          <?php if (isset($validation)): ?>
+            <small class="text-danger">
+              <?= $validation->getError('password') ?>
+            </small>
+          <?php endif; ?>
+
         </div>
+        <div class="form-group col-md-6">
+          <label for="confirm_password">Confirm Password:</label>
+          <input type="password" name="confirm_password" class="form-control" value="" required />
+          <?php if (isset($validation)): ?>
+            <small class="text-danger">
+              <?= $validation->getError('confirm_password') ?>
+            </small>
+          <?php endif; ?>
+        </div>
+      </div>
       <button type="submit" class="btn btn-primary">Register</button>
       <p><a href="<?php echo base_url('Log'); ?>">Already have an account? </p>
     </form>
