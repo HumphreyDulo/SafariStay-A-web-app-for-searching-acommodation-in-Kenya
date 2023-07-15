@@ -6,15 +6,22 @@ use CodeIgniter\Model;
 
 class AdminModel extends Model
 {
-    protected $DBGroup          = 'default';
-    protected $table            = 'tbl_admins';
+    protected $table = 'tbl_admins';
     protected $primaryKey = 'admin_id';
-    protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields = ['admin_name', 'admin_id', 'password', 'created_at', 'updated_at'];
+    protected $allowedFields = ['admin_name', 'password'];
 
+    protected $beforeInsert = ['hashPassword'];
+    protected $beforeUpdate = ['hashPassword'];
+
+    protected function hashPassword(array $data)
+    {
+        if (isset($data['data']['password'])) {
+            $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
+        }
+
+        return $data;
+    }
+   
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
@@ -30,9 +37,7 @@ class AdminModel extends Model
 
     // Callbacks
     protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
     protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
     protected $afterUpdate    = [];
     protected $beforeFind     = [];
     protected $afterFind      = [];

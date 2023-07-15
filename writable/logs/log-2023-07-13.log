@@ -240,3 +240,56 @@ INFO - 2023-07-13 11:34:37 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-07-13 12:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-07-13 12:23:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-07-13 12:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 12:54:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 12:54:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 12:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 12:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 12:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 12:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 12:58:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 13:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 13:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 13:42:32 --> Undefined variable $vendorId
+in APPPATH\Views\post.php on line 64.
+ 1 APPPATH\Views\post.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vendorId', 'C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Views\\post.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Views\\post.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('post', [], true)
+ 5 APPPATH\Controllers\Post.php(12): view('post')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Post->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Post))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 13:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 13:45:54 --> Undefined variable $vendorId
+in APPPATH\Views\post.php on line 64.
+ 1 APPPATH\Views\post.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vendorId', 'C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Views\\post.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Views\\post.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('post', [], true)
+ 5 APPPATH\Controllers\Post.php(12): view('post')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Post->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Post))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 13:50:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 13:50:28 --> Undefined variable $vendorId
+in APPPATH\Views\post.php on line 64.
+ 1 APPPATH\Views\post.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vendorId', 'C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Views\\post.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\https---github.com-HumphreyDulo-Kihanya-Mungai-CS1\\app\\Views\\post.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('post', [], true)
+ 5 APPPATH\Controllers\Post.php(14): view('post')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Post->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Post))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-13 13:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 13:56:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 14:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 14:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 14:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 14:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 14:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 14:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 14:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
