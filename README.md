@@ -68,9 +68,9 @@ echo "You can now access Safari Stay by visiting http://localhost:8080 in your w
 ```
 
 
-### Setting up the Database Environment
+### Setting up the Environment
 
-1. Start the Apache and MySQL services in XAMPP control panel.
+Start the Apache and MySQL services in XAMPP control panel.
 
 ### Clone the Repository
 1. Open your terminal or command prompt.
@@ -79,26 +79,9 @@ echo "You can now access Safari Stay by visiting http://localhost:8080 in your w
    ```terminal
    git clone [(https://github.com/HumphreyDulo/SafariStay-A-web-app-for-searching-acommodation-in-Kenya.git)]
    ```
- 
 
-### 2.4 Database Setup
-1. Access the MySQL database through phpMyAdmin:
-   - Open your web browser and go to `http://localhost/phpmyadmin`
-   - Click on the "New" button to create a new database.
-   - Give the database a name (e.g., `safari_stay`) and click "Create".
-2. Open your terminal or command prompt.
-3. Navigate to the project directory.
-4. Run the following command to run the migrations and create the necessary tables:
-   ```terminal
-   php spark migrate
-   ```
-
-### 2.5 Configuring CodeIgniter
- Update the database configuration settings with your MySQL database credentials
- 
-
-### 2.6 Running the Project
-1. Run the following command to start the CodeIgniter development server:
+### Running the Project
+ Run the following command to start the CodeIgniter development server:
    ```terminal
    php spark serve
    ```
