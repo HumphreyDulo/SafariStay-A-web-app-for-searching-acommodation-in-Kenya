@@ -38,6 +38,7 @@
             <p>No bookings found.</p>
         <?php endif; ?>
     </div>
+    
 
     <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script> <!-- Replace with your Font Awesome kit link -->
 

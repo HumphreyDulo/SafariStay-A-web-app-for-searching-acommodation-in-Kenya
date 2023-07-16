@@ -15,7 +15,7 @@ class Products extends Model
     protected $protectFields = true;
     protected $allowedFields = [
         'id',
-        'vendorID',
+        'vendorid',
         'product_name',
         'product_description',
         'product_images',
@@ -24,7 +24,8 @@ class Products extends Model
         'bathrooms',
         'price',
         'available_date',
-        'additional_info'
+        'additional_info',
+        'approval'
     ];
 
 

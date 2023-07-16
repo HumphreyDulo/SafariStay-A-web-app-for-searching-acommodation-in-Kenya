@@ -55,8 +55,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1>Welcome to your dashboard, <?= session()->get('admin_name') ?>!</h1>
-                            <p>Notifications: <span class="badge badge-primary"><?= $notificationCount ?></span></p>
-                            <a href="<?= base_url('admin') ?>" class="btn btn-primary">View Notifications</a>
+                            <p>Registration Notifications: <span class="badge badge-primary"><?= $notificationCount ?></span></p>
+                             <a href="<?= base_url('admin') ?>" class="btn btn-primary">View Notifications</a>
                         </div>
                     </div>
                 </div>

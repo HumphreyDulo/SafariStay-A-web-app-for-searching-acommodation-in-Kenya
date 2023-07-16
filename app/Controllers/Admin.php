@@ -152,6 +152,49 @@ class Admin extends BaseController
         return redirect()->back()->with('success', 'Notification status updated successfully');
     }
 
+    // In the Products model:
+
+    public function approveproduct($productId)
+    {
+        // Load the necessary models
+        $productModel = new Products();
+    
+        // Find the product with the given product ID
+        $product = $productModel->find($productId);
+    
+        if (!$product) {
+            // Product not found, handle the error accordingly
+            return redirect()->back()->with('error', 'Product not found');
+        }
+    
+        // Update the status of the product to 'accepted'
+        $productModel->where('id', $productId)->set(['approval' => 'accepted'])->update();
+    
+        // Redirect back to the vendor dashboard or appropriate page
+        return redirect()->back()->with('success', 'Product status updated successfully');
+    }
+    
+    public function denyproduct($productId)
+    {
+        // Load the necessary models
+        $productModel = new Products();
+    
+        // Find the product with the given product ID
+        $product = $productModel->find($productId);
+    
+        if (!$product) {
+            // Product not found, handle the error accordingly
+            return redirect()->back()->with('error', 'Product not found');
+        }
+    
+        // Update the status of the product to 'denied'
+        $productModel->where('id', $productId)->set(['approval' => 'denied'])->update();
+    
+        // Redirect back to the vendor dashboard or appropriate page
+        return redirect()->back()->with('success', 'Product status updated successfully');
+    }
+    
+
 
     public function viewUsers()
     {
@@ -168,17 +211,27 @@ class Admin extends BaseController
     }
 
     public function viewProducts()
-    {
-        $model = new Products();
-        $data['products'] = $model->findAll(); // Fetch all products from the model
+{
+    $productModel = new Products();
+    $data['products'] = $productModel->findAll(); // Fetch all products from the model
+
+    $pendingCount = $productModel->where('approval', 'pending')->countAllResults();
+    $data['pendingCount'] = $pendingCount;
+
+    return view('viewproducts', $data);
+}
+
     
-        $notificationModel = new NotificationModel();
-        $notificationCount = $notificationModel->where('status', 'pending')->countAllResults();
-        $data['notificationCount'] = $notificationCount;
-    
-        return view('viewproducts', $data);
-    }
-    
+public function validateProduct()
+{
+    $productModel = new Products();
+    $products = $productModel->findAll(); // Fetch all products from the model
+
+    $data['products'] = $products;
+
+    return view('validate_product', $data);
+}
+
 
     public function delete_user()
     {

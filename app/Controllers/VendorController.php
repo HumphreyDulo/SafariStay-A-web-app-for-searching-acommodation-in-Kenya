@@ -140,23 +140,39 @@ class VendorController extends BaseController
 
 
     public function history()
-        {
-            // Get the user ID from the session or authentication library
-            $session = session();
-            $userId = $session->get('user_id'); // Adjust this according to your session setup
+    {
+        // Get the user ID from the session or authentication library
+        $session = session();
+        $userId = $session->get('user_id'); // Adjust this according to your session setup
     
-            // Create a new instance of the BookingModel
-            $productModel = new Products();
+        // Create a new instance of the Products model
+        $productModel = new Products();
     
-            // Retrieve the user's booking history from the database
-            $products = $productModel->where('vendorid', $userId)->findAll();
+        // Retrieve the vendor's products from the database
+        $products = $productModel->where('vendorid', $userId)->findAll();
     
-            // Pass the bookings data to the view
+        // Check if there are any approved products
+        $hasApprovedProducts = false;
+        foreach ($products as $product) {
+            if ($product['approval'] === 'accepted') {
+                $hasApprovedProducts = true;
+                break;
+            }
+        }
+    
+        if ($hasApprovedProducts) {
+            // Pass the approved products data to the view
             $data['products'] = $products;
-    
-            // Load the view to display the user's booking history
+            // Load the view to display the approved products
+            return view('vendorproducts', $data);
+        } else {
+            // Set a message for pending approval
+            $data['message'] = 'Pending approval';
+            // Load the view to display the message
             return view('vendorproducts', $data);
         }
+    }
+    
         public function bookinghistory()
         {
             // Get the user ID from the session or authentication library

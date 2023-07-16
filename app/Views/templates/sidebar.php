@@ -61,6 +61,15 @@
                         </li>
 
                         <li class="nav-item">
+                            <a href="<?= base_url('Admin/validateproduct'); ?>" class="nav-link">
+                                <p>
+                                    Validate Products
+                                    <span class="right badge badge-primary"></span>
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a href="<?= base_url('admin') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-bell"></i>
                                 <p>

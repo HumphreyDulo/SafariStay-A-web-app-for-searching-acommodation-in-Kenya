@@ -59,6 +59,10 @@ class Post extends Migration
                 'type' => 'TEXT',
                
             ],
+            'approval' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
         ]);
 
         $this->forge->addKey('id', true);
