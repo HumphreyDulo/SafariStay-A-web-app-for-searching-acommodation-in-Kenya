@@ -3,20 +3,23 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-
+use App\Libraries\Mpesa;
 use App\Models\BookingModel;
-
-
 use App\Models\PaymentModel;
-
 //defined('BASEPATH') or exit('No direct script access allowed');
 
-use Config\Mpesa;
-use Stripe\Stripe;
+
 use Stripe\Charge;
+use Stripe\Stripe;
 
 class PaymentController extends BaseController
 {
+    protected $mpesa;
+
+    public function __construct()
+    {
+        $mpesa = new \Safaricom\Mpesa\Mpesa();
+    }
 
     public function index()
     {
@@ -26,33 +29,33 @@ class PaymentController extends BaseController
     }
 
 
-    /*public function X()
-
     public function process()
-
     {
-        $paymentModel = new PaymentModel();
+
+        // Get the user ID from the session or authentication library
         $session = session();
+        $userId = $session->get('user_id'); // Adjust this according to your session setup
+        $amount = 1000;
 
-        $expirationDate = $this->request->getPost('expiration_date');
-        $cvv = $this->request->getPost('cvv');
-        $amount = 1000; // Amount in cents
 
-        // Extract month and year from expiration date
-        $expMonth = substr($expirationDate, 0, 2);
-        $expYear = substr($expirationDate, 3, 2);
+        // Create a new instance of the BookingModel
+        $bookingModel = new BookingModel();
+        $paymentModel = new PaymentModel();
 
-        // Create a charge using Stripe PHP library
+
+
+        // Add the payment logic here
         try {
-            Stripe::setApiKey('sk_test_51M4UENJwnnN8PYBK4tUrWvBJid7AcL7Ff3znlgIQsLYhXsnkEZg6qw0RcQLQIX66SfErEOYMShqAwkmMm6gUAszR005dZjowmB');
+            Stripe::setApiKey('sk_test_51M4UENJwnnN8PYBK4tUrWvBJid7AcL7Ff3znlgIQsLYhXsnkEZg6qw0RcQLQIX66SfErEOYMShqAwkmMm6gUAszR005dZjowmB'); // Replace with your Stripe API key
 
             // Generate a test token using Stripe test card details
             $token = 'tok_visa'; // Replace with the appropriate test token for the desired card type
 
             $charge = Charge::create([
                 'amount' => $amount,
+                // CENTS
                 'currency' => 'usd',
-                'source' => $token, // Use the test token instead of card details
+                'source' => $token,
             ]);
 
             // Handle successful payment
@@ -60,8 +63,12 @@ class PaymentController extends BaseController
             $status = $charge->status;
 
             if ($status === 'succeeded') {
+                // Insert the booking data into the database
+
+
                 // Save payment details to the database with status "complete"
                 $paymentData = [
+                    'booking_id' => $bookingModel->getInsertID(),
                     'payment_id' => $paymentId,
                     'status' => 'complete',
                     'created_at' => date('Y-m-d H:i:s'),
@@ -93,87 +100,10 @@ class PaymentController extends BaseController
             $session->setFlashdata('error_message', 'Payment error: ' . $error);
 
             // Redirect to an error page
-            return redirect()->to('error_page');
-        }
-    }
-
-*/
-
-    public function process()
-    {
-        
-        // Get the user ID from the session or authentication library
-        $session = session();
-        $userId = $session->get('user_id'); // Adjust this according to your session setup
-        $amount = 1000;
-    
-    
-        // Create a new instance of the BookingModel
-        $bookingModel = new BookingModel();
-        $paymentModel = new PaymentModel();
-    
-       
-    
-        // Add the payment logic here
-        try {
-            Stripe::setApiKey('sk_test_51M4UENJwnnN8PYBK4tUrWvBJid7AcL7Ff3znlgIQsLYhXsnkEZg6qw0RcQLQIX66SfErEOYMShqAwkmMm6gUAszR005dZjowmB'); // Replace with your Stripe API key
-    
-            // Generate a test token using Stripe test card details
-            $token = 'tok_visa'; // Replace with the appropriate test token for the desired card type
-    
-            $charge = Charge::create([
-                'amount' => $amount , // CENTS
-                'currency' => 'usd',
-                'source' => $token,
-            ]);
-    
-            // Handle successful payment
-            $paymentId = $charge->id;
-            $status = $charge->status;
-    
-            if ($status === 'succeeded') {
-                // Insert the booking data into the database
-                
-    
-                // Save payment details to the database with status "complete"
-                $paymentData = [
-                    'booking_id' => $bookingModel->getInsertID(),
-                    'payment_id' => $paymentId,
-                    'status' => 'complete',
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ];
-                $paymentModel->insert($paymentData);
-    
-                 // Set flashdata with success message
-                 $session->setFlashdata('success_message', 'Payment successful.');
-
-                 // Redirect to a success page
-                 return redirect()->to('paymentSuccess');
-             } else {
-                 // Payment status is not "succeeded"
-                 // Handle payment errors or other statuses
-                 $error = 'Payment error: Invalid payment status.';
- 
-                 // Set flashdata with error message
-                 $session->setFlashdata('error_message', $error);
- 
-                 // Redirect to an error page
-                 return redirect()->to('paymentError');
-             }
-        } catch (\Exception $e) {
-            // Handle payment errors
-            $error = $e->getMessage();
-
-            // Set flashdata with error message
-            $session->setFlashdata('error_message', 'Payment error: ' . $error);
-
-            // Redirect to an error page
             return redirect()->to('paymentError');
-        } 
-        
-    }
+        }
 
+    }
 
 
     public function success()
@@ -187,103 +117,18 @@ class PaymentController extends BaseController
 
     }
 
+    public function callback()
+    {
+        // Retrieve the callback data sent by M-PESA
+        $callbackData = $this->request->getPost(); // Assuming you are using POST request for the callback
 
-    public function Mprocess()
-{
- 
+        // Process the callback data and update your database or perform any other necessary actions
+        // ...
 
-    $paymentModel = new PaymentModel();
-    $session = session();
-
-    $amount = $this->request->getPost('amount');
-    $phone = $this->request->getPost('phone');
-
-    // Perform any necessary data validation and formatting
-
-    // Perform validation for amount
-    if (!is_numeric($amount) || $amount < 0) {
-        // Invalid amount
-        $session->setFlashdata('error_message', 'Invalid amount.');
-        return redirect()->to('paymentError');
+        // Return a response to M-PESA to acknowledge the callback
+        return $this->response->setStatusCode(200); // Sending a 200 status code as acknowledgment
     }
 
-    // Perform validation for phone number
-    $phoneRegex = '/^(?:\+?254|0)[17]\d{8}$/';
-    if (!preg_match($phoneRegex, $phone)) {
-        // Invalid phone number
-        $session->setFlashdata('error_message', 'Invalid phone number.');
-        return redirect()->to('paymentError');
-    }
-
-    // Make a request to the M-PESA API
-    try {
-        // Set up your API request parameters
-        $apiEndpoint = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'; // Replace with the actual API endpoint URL
-        $apiKey = '5RcDAHh3yMlsGLq4lIxbemJDITyCAULK';
-        $apiSecret = 'RuiTgeSoFpFeMVFh';
-
-        $client = new \GuzzleHttp\Client();
-        $response = $client->request('POST', $apiEndpoint, [
-            'json' => [
-                'amount' => $amount,
-                'phone' => $phone,
-            ],
-            'headers' => [
-                'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer ' . base64_encode($apiKey . ':' . $apiSecret),
-            ],
-        ]);
-
-        // Process the API response
-        $statusCode = $response->getStatusCode();
-        $responseBody = json_decode($response->getBody(), true);
-
-        if ($statusCode === 200) {
-            // Check if the 'status' key exists in the response body
-            if (isset($responseBody['status']) && $responseBody['status'] === 'success') {
-                // Payment successful
-                $paymentId = $responseBody['payment_id'];
-
-                // Save payment details to the database with status "complete"
-                $paymentData = [
-                    'payment_id' => $paymentId,
-                    'status' => 'complete',
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ];
-                $paymentModel->insert($paymentData);
-
-                // Set flashdata with success message
-                $session->setFlashdata('success_message', 'Payment successful.');
-
-                // Redirect to a success page
-                return redirect()->to('MPsuccess');
-            } else {
-                // Payment failed or API error
-                $errorMessage = isset($responseBody['error']) ? $responseBody['error'] : 'Unknown error occurred';
-
-                // Set flashdata with error message
-                $session->setFlashdata('error_message', 'Payment error: ' . $errorMessage);
-
-                // Redirect to an error page
-                return redirect()->to('MPerror');
-            }
-        } else {
-            // API request was not successful
-            $session->setFlashdata('error_message', 'API request failed.');
-            return redirect()->to('MPerror');
-        }
-    } catch (\Exception $e) {
-        // Handle API errors
-        $error = $e->getMessage();
-
-        // Set flashdata with error message
-        $session->setFlashdata('error_message', 'Payment error: ' . $error);
-
-        // Redirect to an error page
-        return redirect()->to('MPerror');
-    }
-}
 
 
     public function MPESA()

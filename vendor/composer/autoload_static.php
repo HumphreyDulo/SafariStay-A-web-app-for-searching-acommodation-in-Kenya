@@ -42,6 +42,7 @@ class ComposerStaticInit2f13e1c21784b2a3e22d43a86f602690
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Console\\' => 26,
             'Stripe\\' => 7,
+            'Safaricom\\Mpesa\\' => 16,
         ),
         'P' => 
         array (
@@ -164,14 +165,18 @@ class ComposerStaticInit2f13e1c21784b2a3e22d43a86f602690
         array (
             0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
         ),
+        'Safaricom\\Mpesa\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/safaricom/mpesa/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -3151,6 +3156,9 @@ class ComposerStaticInit2f13e1c21784b2a3e22d43a86f602690
         'Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\TestLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/TestLogger.php',
         'ReturnTypeWillChange' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
+        'Safaricom\\Mpesa\\Facade\\Mpesa' => __DIR__ . '/..' . '/safaricom/mpesa/src/Facade/Mpesa.php',
+        'Safaricom\\Mpesa\\Mpesa' => __DIR__ . '/..' . '/safaricom/mpesa/src/Mpesa.php',
+        'Safaricom\\Mpesa\\MpesaServiceProvider' => __DIR__ . '/..' . '/safaricom/mpesa/src/MpesaServiceProvider.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',
         'SebastianBergmann\\CliParser\\OptionDoesNotAllowArgumentException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/OptionDoesNotAllowArgumentException.php',

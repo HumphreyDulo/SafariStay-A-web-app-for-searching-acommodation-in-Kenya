@@ -134,6 +134,7 @@ $routes->get('booking-all', 'BookingController::all');
 
 $routes->get('validate_product', 'Admin::validateproduct');
 
+$routes->get('mpesa/stkpush', 'MpesaController::stkPush');
 
 //$routes->post('/', 'Auth::index');
 //$routes->post('/', 'Log::index');
