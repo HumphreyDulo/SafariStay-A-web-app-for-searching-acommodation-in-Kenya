@@ -46,14 +46,14 @@
 
 <body>
   <div class="container">
-
     <h2>User Registration</h2>
+
     <?php if (session()->has('error')): ?>
       <div class="alert alert-danger">
         <?= session('error') ?>
       </div>
-
     <?php endif; ?>
+    
     <form method="post" style="max-width: 600px;" action="<?php echo base_url('Auth'); ?>">
       <div class="row col-12">
         <div class="form-group col-md-6">

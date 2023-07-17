@@ -30,7 +30,7 @@
 							<div class="single-about-us">
 								<div class="about-us-txt">
 									<h2>
-										Explore the Beauty of the World 
+										Explore, with SafariStay 
 
 									</h2>
 									<div class="about-btn">

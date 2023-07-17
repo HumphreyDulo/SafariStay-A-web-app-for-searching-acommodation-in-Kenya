@@ -37,7 +37,7 @@ class MpesaController extends Controller
         // Set the cURL options
         $ch = curl_init('https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest');
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Authorization: Bearer VGTjjGztleBGarON9Pb6eyNw4JxB',
+            'Authorization: Bearer DL69GfiIjdIGw8FlZms3ujb1iwnE',
             'Content-Type: application/json'
         ]);
         curl_setopt($ch, CURLOPT_POST, 1);
